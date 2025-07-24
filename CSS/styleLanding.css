@@ -1,0 +1,533 @@
+/* IMPORTAR FUENTES */
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(../assets/fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Medium.ttf);
+}
+/* VARIABLES */
+:root {
+    --blancoFondo: #ffffff;
+    --naranjaSecundario: #FA803F;
+    --negroFuentes: #191919;
+    --fuente-H1: 'BebasNeue';
+    --fuente-H2: 'Oswald';
+    --fuente-H3-H4-H5-H6-SPAN: 'Poppins';
+    --fuente-BTN-CTAS: 'Montserrat';
+    --fuente-P: 'Inter';
+}
+
+/* ESTILOS BASICOS */
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--negroFuentes);
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+h1 {
+    font-family: var(--fuente-H1);
+    font-weight: 400;
+    font-size: 108px;
+}
+h2 {
+    font-family: var(--fuente-H2);
+    font-weight: 600;
+    font-size: 96px;
+}
+h3, h4, h5, h6, span {
+    font-family: var(--fuente-H3-H4-H5-H6-SPAN);
+    font-weight: 500;
+}
+button, a {
+    font-family: var(--fuente-BTN-CTAS);
+    font-weight: 700;
+}
+p {
+    font-family: var(--fuente-P);
+    font-weight: 500;
+    font-size: 36px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    background-color: var(--naranjaSecundario);
+    padding: 1.2rem 2rem;
+    width: fit-content;
+    font-size: 28px;
+    box-shadow: 0px 3.754px 3.754px 0px rgba(0, 0, 0, 0.25);
+    color: var(--blancoFondo);
+    border-radius: 74px;
+    transition: all .3s ease-in-out;
+}
+.btn:hover{
+    background: #F86D21;
+    transform: translateY(-12px);
+    box-shadow: 4.765px -0.953px 52.315px 0px #F70;
+}
+section, footer{
+    display: flex;
+    padding: 3rem 0rem !important;
+    background-color: var(--blancoFondo);
+}
+span{
+    color: var(--naranjaSecundario);
+    font-weight: bold;
+}
+/* ----------------------------------- HEADER ----------------------------------- */
+header {
+    display: flex;
+    height: 100vh;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    background: rgba(255, 128, 0, 0.7);
+    position: fixed;
+    z-index: 2;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+nav ul li a {
+    font-size: 30px;
+    transition: all .4s ease-in-out;
+}
+/* -------------------- LOGOS -------------------- */
+#logosContainer {
+    width: 94px;
+    height: 94px;
+    position: relative;
+}
+#logosContainer img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+#logo {
+    opacity: 1;
+}
+#logoHover {
+    opacity: 0;
+    transform: scale(1.5);
+}
+#logosContainer:hover #logo {
+    opacity: 0;
+}
+#logosContainer:hover #logoHover {
+    opacity: 1;
+}
+/* para el rayo de los navLinks */
+.thunderNav {
+    height: 80px;
+    position: absolute;
+    top: -40%;
+    right: 35%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.navLink {
+    position: relative;
+    cursor: pointer;
+}
+.navLink:hover a {
+    color: #ffffff;
+}
+.navLink:hover img {
+    opacity: 1;
+}
+/* para el MENU HAMBURGUESA */
+.containerActionMenu{
+    display: none;
+}
+#openMenu, #closeMenu{
+    width: 94px;
+}
+#openMenu path, #closeMenu path{
+    transition: all .4s ease-in-out;
+}
+#openMenu:hover path, #closeMenu:hover path{
+    fill: var(--naranjaSecundario);
+    filter: drop-shadow(0px 4px 7.1px rgba(255, 136, 0, 0.75));
+    transform: translateY(10px);
+}
+/* ahora con el contenido PRINCIPAL DEL HEADER */
+.colsHeaderContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.col1Header,.col2Header{
+    display: flex;
+    height: 100%;
+}
+/* COL1 */
+.col1Header{
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 500px 0px 100px;
+    gap: 22px;
+    width: 100%;
+    position: relative;
+}
+.triangleHeader{
+    position: absolute;
+    z-index: -1;
+}
+/* PARA LOS TRIANGULOS DEL HEADER */
+.triangle1{
+    top: 18%;
+    left: 36%;
+    transform: rotate(-200deg);
+    height: 100px;
+}
+.triangle2{
+    height: 150px;
+    bottom: -50px;
+    left: -20px;
+    transform: rotate(35deg);
+}
+.triangle3{
+    right: 10%;
+    bottom: 7%;
+    transform: rotate(40deg);
+    height: 80px;
+}
+/* COL2 */
+.col2Header{
+    width: 130%;
+    background-color: var(--naranjaSecundario);
+    position: relative;
+}
+.col2Header img{
+    height: 90%;
+    position: absolute;
+    bottom: 0px;
+    left: -220px;
+}
+/* ----------------------------------- SECTION ONE : SOBRE NOSOTROS ----------------------------------- */
+.sectionOneAboutUs{
+    align-items: center;
+    background-image: url(../assets/fondoSobreNosotros.png);
+    background-position: center;
+    background-size: cover;
+}
+.col1About, .col2About{
+    width: 50%;
+}
+.col2About{
+    text-align: end;
+    padding-right: 7rem;
+    gap: 10px;
+}
+/* ----------------------------------- SECTION TWO : RUTINAS ----------------------------------- */
+.sectionTwoRoutines{
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 220px;
+    text-align: center;
+    gap: 49px;
+}
+/* PARA EL NAV DE LAS PESTAÑAS */
+.tabMenu{
+    display: flex;
+    width: 100%;
+    color: var(--negroFuentes);
+    justify-content: center;
+    gap: 25px;
+}
+.tabMenu a:hover{
+    background-color: var(--naranjaSecundario);
+    /* background-color: rgba(0, 0, 0, 0.616); */
+    color: white;
+}
+.tabMenu a{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: .6rem 1rem;
+    font-size: 38px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
+}
+.tabMenu .active{
+    color: white !important;
+    background-color: var(--naranjaSecundario); 
+}
+/* PARA LAS CARDS */
+.cardsContainer{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
+}
+.cardRoutine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #FB5700 0%, #F4A700 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    height: 550px;
+    width: 500px;
+    padding: 56px 20px;
+    transition: all ease-in-out .4s;
+}
+.cardRoutine:hover{
+    box-shadow: 0px 7px 57.5px 0px rgba(0, 0, 0, 0.50);
+    transform: translateX(10px);
+}
+/* CLASE PARA ESCONDER LAS CARDS CON ANIMACIÓN */
+.hideCard {
+    transform: scale(0.5);
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+.divMancuerna{
+    display: flex;
+    width: 100%;
+}
+.divMancuerna img{
+    width: 81px;
+}
+.cardRoutine h3{
+    font-size: 50px;
+}
+.cardRoutine h3, .cardRoutine span{
+    color: white;
+    font-weight: 500;
+}
+.caracteristica img{
+    width: 30px;
+    transform: rotate(90deg);
+}
+.caracteristica span{
+    font-size: 30px;
+}
+.cardRoutine .btn{
+    transform: scale(.8);
+}
+/* ----------------------------------- SECTION THREE : CALENDARIO ----------------------------------- */
+.sectionThreeCalendar{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ----------------------------------- SECTION FOUR : BLOG ----------------------------------- */
+.sectionFourBlog{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 392px !important;
+    gap: 61px;
+}
+.navBlog{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.navBlog a{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+    transition: color ease-in .3s;
+}
+.navBlog .active, .navBlog a:hover{
+    color: var(--naranjaSecundario);
+}
+.containerPosts{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+/* Estilo general para el post */
+.postGuide{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 21px;
+    background-color: var(--naranjaSecundario);
+    width: 417px;
+    height: fit-content;
+    padding-bottom: 25px;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+}
+.postGuide:hover{
+    box-shadow: 0px 4px 77px 0px rgba(0, 0, 0, 0.5);
+    transform: translateX(-25px);
+}
+.postGuide img{
+    height: 300px;
+    object-fit: cover;
+}
+.postGuide h3, .postGuide span, .postGuide p{
+    color: white;
+}
+.postGuide h3{
+    font-weight: 600;
+    font-size: 35px;
+    font-family: 'Montserrat' , sans-serif;
+}
+.postGuide span, .postGuide p{
+    font-size: 30px;
+}
+.postGuide span{
+    font-weight: 500;
+}
+.postGuide p{
+    text-align: start !important;
+}
+.containerTextsBlog{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding: 1rem;
+}
+/* ----------------------------------- SECTION FIVE : TESTIMONIOS ----------------------------------- */
+.sectionFiveReviews{
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 16.3rem !important;
+    text-align: center;
+    gap: 50px;
+}
+/* Container de las reviews */
+.cardsTestimoniosContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+/* Estilos generales de la review */
+.cardTestimonioUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 530px;
+    transition: all ease-in-out .4s;
+    background-color: #E4E4E4;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2rem 0rem;
+    position: relative;
+    z-index: 0; 
+}
+.cardTestimonioUser:hover{
+    transform: rotate(-2deg);
+    box-shadow: 0px 4px 77px 0px rgba(0, 0, 0, 0.3);
+}
+.imgReviewContainer{
+    width: 300px;
+    height: 300px;
+}
+.imgReviewContainer,
+.cardTestimonioUser p {
+    position: relative;
+    z-index: 2; /* imagen y texto por encima del rayo */
+}
+.imgReviewContainer, .imgReviewContainer img{
+    border-radius: 20px;
+}
+.imgReviewContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cardTestimonioUser p{
+    font-size: 25px;
+    width: 80%;
+}
+.thunderTestimonio{
+    position: absolute;
+    top: -30px;
+    z-index: 1;
+}
+/* ----------------------------------- FOOTER ----------------------------------- */
+footer{
+    flex-direction: column;
+    text-align: center;
+}
+.footerDiv1,.footerDiv2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 2rem 36rem;
+}
+.navFooter{
+    position: static !important;
+    flex-direction: column;
+    background: none !important;
+}
+.navFooter, .navFooter ul{
+    flex-direction: column;
+    gap: 50px;
+}
+.navFooter .thunderNav{
+    right: 47%;
+}
+.navFooter #logosContainer {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.navFooter .navLink:hover a {
+    color: var(--naranjaSecundario);
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.socialIcons a svg{
+    width: 60px;
+    height: 60px;
+}
+.socialIcons a svg path{
+    transition: all ease-in-out .3s;
+}
+.socialIcons a svg:hover path{
+    fill: var(--negroFuentes);
+    transform: translateY(10px);
+}
+.youtubeLogo{
+    transform: scale(1.3);
+}
+/* *********************************** MEDIA QUERRYS *********************************** */
