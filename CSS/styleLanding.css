@@ -3,32 +3,38 @@
     font-family: 'BebasNeue';
     src: url(../assets/fonts/BebasNeue-Regular.ttf);
 }
+
 @font-face {
     font-family: 'Inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
+
 @font-face {
     font-family: 'Montserrat';
     src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
+
 @font-face {
     font-family: 'Oswald';
     src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
+
 @font-face {
     font-family: 'Poppins';
     src: url(../assets/fonts/Poppins-Medium.ttf);
 }
+
 /* VARIABLES */
 :root {
     --blancoFondo: #ffffff;
-    --naranjaSecundario: #FA803F;
+    --naranjaSecundario: #F95E0B;
     --negroFuentes: #191919;
     --fuente-H1: 'BebasNeue';
     --fuente-H2: 'Oswald';
     --fuente-H3-H4-H5-H6-SPAN: 'Poppins';
     --fuente-BTN-CTAS: 'Montserrat';
     --fuente-P: 'Inter';
+    --grisClaro: #E4E4E4;
 }
 
 /* ESTILOS BASICOS */
@@ -40,30 +46,41 @@
     text-decoration: none;
     scroll-behavior: smooth;
 }
+
 h1 {
     font-family: var(--fuente-H1);
     font-weight: 400;
     font-size: 108px;
 }
+
 h2 {
     font-family: var(--fuente-H2);
     font-weight: 600;
     font-size: 96px;
 }
-h3, h4, h5, h6, span {
+
+h3,
+h4,
+h5,
+h6,
+span {
     font-family: var(--fuente-H3-H4-H5-H6-SPAN);
     font-weight: 500;
 }
-button, a {
+
+button,
+a {
     font-family: var(--fuente-BTN-CTAS);
     font-weight: 700;
 }
+
 p {
     font-family: var(--fuente-P);
     font-weight: 500;
     font-size: 36px;
 }
-.btn{
+
+.btn {
     display: flex;
     justify-content: center;
     background-color: var(--naranjaSecundario);
@@ -75,25 +92,56 @@ p {
     border-radius: 74px;
     transition: all .3s ease-in-out;
 }
-.btn:hover{
+
+.btn:hover {
     background: #F86D21;
     transform: translateY(-12px);
     box-shadow: 4.765px -0.953px 52.315px 0px #F70;
 }
-section, footer{
+
+section,
+footer {
     display: flex;
     padding: 3rem 0rem !important;
     background-color: var(--blancoFondo);
 }
-span{
+
+span {
     color: var(--naranjaSecundario);
     font-weight: bold;
 }
+
 /* ----------------------------------- HEADER ----------------------------------- */
 header {
     display: flex;
     height: 100vh;
+    /* AGREGADO PARA EL CAROUSEL OJO */
+    overflow: hidden;
+    position: relative;
 }
+
+/* AGREGADO PARA EL CAROUSEL OJO */
+/* La siguiente clase es la que se va a agregar o bueno usar en js */
+.headerSlide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* se oculta por defecto  */
+    transition: opacity .8s ease-in-out;
+    z-index: 1;
+    /* nav (z-index 2) queda encima */
+}
+
+.headerSlide.active {
+    opacity: 1;
+    /* la visible */
+    pointer-events: auto;
+    /* por si necesitas interacción */
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -105,21 +153,26 @@ nav {
     position: fixed;
     z-index: 2;
 }
+
 nav ul {
     display: flex;
     justify-content: space-around;
     width: 80%;
+    transition: all ease-in-out .4s;
 }
+
 nav ul li a {
     font-size: 30px;
     transition: all .4s ease-in-out;
 }
+
 /* -------------------- LOGOS -------------------- */
 #logosContainer {
     width: 94px;
     height: 94px;
     position: relative;
 }
+
 #logosContainer img {
     width: 100%;
     height: 100%;
@@ -128,65 +181,65 @@ nav ul li a {
     left: 0;
     transition: all 0.3s ease-in-out;
 }
+
 #logo {
     opacity: 1;
 }
+
 #logoHover {
     opacity: 0;
     transform: scale(1.5);
 }
+
 #logosContainer:hover #logo {
     opacity: 0;
 }
+
 #logosContainer:hover #logoHover {
     opacity: 1;
 }
-/* para el rayo de los navLinks */
-.thunderNav {
-    height: 80px;
-    position: absolute;
-    top: -40%;
-    right: 35%;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-}
-.navLink {
-    position: relative;
-    cursor: pointer;
-}
+
 .navLink:hover a {
     color: #ffffff;
 }
-.navLink:hover img {
-    opacity: 1;
-}
+
 /* para el MENU HAMBURGUESA */
-.containerActionMenu{
+#closeMenu,
+#openMenu {
     display: none;
 }
-#openMenu, #closeMenu{
-    width: 94px;
+
+#openMenu svg,
+#closeMenu svg {
+    width: 84px;
 }
-#openMenu path, #closeMenu path{
+
+#openMenu path,
+#closeMenu path {
     transition: all .4s ease-in-out;
 }
-#openMenu:hover path, #closeMenu:hover path{
-    fill: var(--naranjaSecundario);
-    filter: drop-shadow(0px 4px 7.1px rgba(255, 136, 0, 0.75));
+
+#openMenu:hover path,
+#closeMenu:hover path {
+    fill: var(--blancoFondo);
     transform: translateY(10px);
 }
+
 /* ahora con el contenido PRINCIPAL DEL HEADER */
-.colsHeaderContainer{
+.colsHeaderContainer {
     display: flex;
     width: 100%;
     height: 100%;
 }
-.col1Header,.col2Header{
+
+.col1Header,
+.col2Header {
     display: flex;
     height: 100%;
 }
+
 /* COL1 */
-.col1Header{
+.col1Header {
     flex-direction: column;
     justify-content: center;
     padding: 0px 500px 0px 100px;
@@ -194,78 +247,71 @@ nav ul li a {
     width: 100%;
     position: relative;
 }
-.triangleHeader{
+
+.triangleHeader {
     position: absolute;
     z-index: -1;
 }
-/* PARA LOS TRIANGULOS DEL HEADER */
-.triangle1{
-    top: 18%;
-    left: 36%;
-    transform: rotate(-200deg);
-    height: 100px;
-}
-.triangle2{
-    height: 150px;
-    bottom: -50px;
-    left: -20px;
-    transform: rotate(35deg);
-}
-.triangle3{
-    right: 10%;
-    bottom: 7%;
-    transform: rotate(40deg);
-    height: 80px;
-}
+
 /* COL2 */
-.col2Header{
+.col2Header {
     width: 130%;
     background-color: var(--naranjaSecundario);
     position: relative;
 }
-.col2Header img{
+
+.col2Header img {
     height: 90%;
     position: absolute;
     bottom: 0px;
     left: -220px;
 }
+
 /* ----------------------------------- SECTION ONE : SOBRE NOSOTROS ----------------------------------- */
-.sectionOneAboutUs{
+.sectionOneAboutUs {
     align-items: center;
     background-image: url(../assets/fondoSobreNosotros.png);
     background-position: center;
     background-size: cover;
 }
-.col1About, .col2About{
+
+.col1About,
+.col2About {
     width: 50%;
 }
-.col2About{
+
+.col2About {
     text-align: end;
     padding-right: 7rem;
     gap: 10px;
 }
+
 /* ----------------------------------- SECTION TWO : RUTINAS ----------------------------------- */
-.sectionTwoRoutines{
+.sectionTwoRoutines {
     flex-direction: column;
     align-items: center;
     margin: 0px 220px;
     text-align: center;
     gap: 49px;
 }
+
 /* PARA EL NAV DE LAS PESTAÑAS */
-.tabMenu{
+.tabMenu {
     display: flex;
     width: 100%;
     color: var(--negroFuentes);
     justify-content: center;
     gap: 25px;
+    align-items: center;
 }
-.tabMenu a:hover{
+
+.tabMenu a:hover {
     background-color: var(--naranjaSecundario);
     /* background-color: rgba(0, 0, 0, 0.616); */
     color: white;
 }
-.tabMenu a{
+
+.tabMenu a {
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -274,18 +320,21 @@ nav ul li a {
     transition: all ease-in-out .4s;
     cursor: pointer;
 }
-.tabMenu .active{
+
+.tabMenu .active {
     color: white !important;
-    background-color: var(--naranjaSecundario); 
+    background-color: var(--naranjaSecundario);
 }
+
 /* PARA LAS CARDS */
-.cardsContainer{
+.cardsContainer {
     display: flex;
     gap: 50px;
     width: 100%;
     justify-content: center;
 }
-.cardRoutine{
+
+.cardRoutine {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -298,10 +347,12 @@ nav ul li a {
     padding: 56px 20px;
     transition: all ease-in-out .4s;
 }
-.cardRoutine:hover{
+
+.cardRoutine:hover {
     box-shadow: 0px 7px 57.5px 0px rgba(0, 0, 0, 0.50);
     transform: translateX(10px);
 }
+
 /* CLASE PARA ESCONDER LAS CARDS CON ANIMACIÓN */
 .hideCard {
     transform: scale(0.5);
@@ -313,67 +364,154 @@ nav ul li a {
     pointer-events: none;
     position: absolute;
 }
-.divMancuerna{
+
+.divMancuerna {
     display: flex;
     width: 100%;
 }
-.divMancuerna img{
+
+.divMancuerna img {
     width: 81px;
 }
-.cardRoutine h3{
+
+.cardRoutine h3 {
     font-size: 50px;
 }
-.cardRoutine h3, .cardRoutine span{
+
+.cardRoutine h3,
+.cardRoutine span {
     color: white;
     font-weight: 500;
 }
-.caracteristica img{
+
+.caracteristica img {
     width: 30px;
     transform: rotate(90deg);
 }
-.caracteristica span{
+
+.caracteristica span {
     font-size: 30px;
 }
-.cardRoutine .btn{
+
+.cardRoutine .btn {
     transform: scale(.8);
 }
+
 /* ----------------------------------- SECTION THREE : CALENDARIO ----------------------------------- */
-.sectionThreeCalendar{
+.sectionThreeCalendar {
     height: 100vh;
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 50px;
+    text-align: center;
 }
+
+/* ---------- CALENDARIO ---------- */
+#calendar {
+    /* más alto en desktop */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fc-toolbar-title {
+    /* “Julio de 2025” → primera mayúscula */
+    text-transform: capitalize;
+    font-family: var(--fuente-H2);
+    font-weight: 600;
+}
+
+/* botones de navegación */
+.fc .fc-button-primary {
+    background: var(--naranjaSecundario);
+    border: none;
+    color: #fff;
+    /* chevron visible */
+}
+
+.fc .fc-button-primary .fc-icon {
+    color: #fff;
+}
+
+/* suavidad general */
+.fc .fc-button,
+.fc-event,
+.fc .fc-daygrid-day-frame {
+    transition: .25s all ease-in-out;
+}
+
+/* celda resaltada al pasar el mouse */
+.fc-daygrid-day:hover {
+    background: var(--grisClaro);
+}
+
+/* eventos al pasar el mouse */
+.fc-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+}
+
+/* clases de categoría */
+.fc-event--crossfit {
+    background: var(--naranjaSecundario);
+    color: #fff;
+    border: none;
+}
+
+.fc-event--calistenia {
+    background: var(--negroFuentes);
+    color: var(--blancoFondo);
+    border: none;
+}
+
+.fc-event--visita {
+    background: var(--grisClaro);
+    color: var(--negroFuentes);
+    border: none;
+}
+
+/* celdas más altas (desktop) */
+.fc-daygrid-day-frame {
+    min-height: 110px;
+}
+
 /* ----------------------------------- SECTION FOUR : BLOG ----------------------------------- */
-.sectionFourBlog{
+.sectionFourBlog {
     flex-direction: column;
     justify-content: center;
     text-align: center;
     padding: 4rem 392px !important;
     gap: 61px;
 }
-.navBlog{
+
+.navBlog {
     display: flex;
     justify-content: center;
     gap: 50px;
 }
-.navBlog a{
+
+.navBlog a {
     color: rgba(0, 0, 0, 0.5);
     font-size: 30px;
     transition: color ease-in .3s;
 }
-.navBlog .active, .navBlog a:hover{
+
+.navBlog .active,
+.navBlog a:hover {
     color: var(--naranjaSecundario);
 }
-.containerPosts{
+
+.containerPosts {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     flex-wrap: wrap;
     width: 100%;
 }
+
 /* Estilo general para el post */
-.postGuide{
+.postGuide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -386,32 +524,43 @@ nav ul li a {
     border-radius: 5px;
     transition: all ease-in-out .4s;
 }
-.postGuide:hover{
+
+.postGuide:hover {
     box-shadow: 0px 4px 77px 0px rgba(0, 0, 0, 0.5);
     transform: translateX(-25px);
 }
-.postGuide img{
+
+.postGuide img {
     height: 300px;
     object-fit: cover;
 }
-.postGuide h3, .postGuide span, .postGuide p{
+
+.postGuide h3,
+.postGuide span,
+.postGuide p {
     color: white;
 }
-.postGuide h3{
+
+.postGuide h3 {
     font-weight: 600;
     font-size: 35px;
-    font-family: 'Montserrat' , sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
-.postGuide span, .postGuide p{
+
+.postGuide span,
+.postGuide p {
     font-size: 30px;
 }
-.postGuide span{
+
+.postGuide span {
     font-weight: 500;
 }
-.postGuide p{
+
+.postGuide p {
     text-align: start !important;
 }
-.containerTextsBlog{
+
+.containerTextsBlog {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -419,22 +568,25 @@ nav ul li a {
     gap: 20px;
     padding: 1rem;
 }
+
 /* ----------------------------------- SECTION FIVE : TESTIMONIOS ----------------------------------- */
-.sectionFiveReviews{
+.sectionFiveReviews {
     flex-direction: column;
     align-items: center;
     padding: 4rem 16.3rem !important;
     text-align: center;
     gap: 50px;
 }
+
 /* Container de las reviews */
-.cardsTestimoniosContainer{
+.cardsTestimoniosContainer {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
+
 /* Estilos generales de la review */
-.cardTestimonioUser{
+.cardTestimonioUser {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -447,87 +599,329 @@ nav ul li a {
     overflow: hidden;
     padding: 2rem 0rem;
     position: relative;
-    z-index: 0; 
+    z-index: 0;
 }
-.cardTestimonioUser:hover{
+
+.cardTestimonioUser:hover {
     transform: rotate(-2deg);
     box-shadow: 0px 4px 77px 0px rgba(0, 0, 0, 0.3);
 }
-.imgReviewContainer{
+
+.imgReviewContainer {
     width: 300px;
     height: 300px;
 }
+
 .imgReviewContainer,
 .cardTestimonioUser p {
     position: relative;
-    z-index: 2; /* imagen y texto por encima del rayo */
+    z-index: 2;
+    /* imagen y texto por encima del rayo */
 }
-.imgReviewContainer, .imgReviewContainer img{
+
+.imgReviewContainer,
+.imgReviewContainer img {
     border-radius: 20px;
 }
-.imgReviewContainer img{
+
+.imgReviewContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.cardTestimonioUser p{
+
+.cardTestimonioUser p {
     font-size: 25px;
     width: 80%;
 }
-.thunderTestimonio{
+
+.thunderTestimonio {
     position: absolute;
     top: -30px;
     z-index: 1;
 }
+
 /* ----------------------------------- FOOTER ----------------------------------- */
-footer{
+footer {
     flex-direction: column;
     text-align: center;
 }
-.footerDiv1,.footerDiv2{
+
+.footerDiv1,
+.footerDiv2 {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 50px;
     padding: 2rem 36rem;
 }
-.navFooter{
+
+.navFooter {
     position: static !important;
     flex-direction: column;
     background: none !important;
 }
-.navFooter, .navFooter ul{
+
+.navFooter,
+.navFooter ul {
     flex-direction: column;
     gap: 50px;
 }
-.navFooter .thunderNav{
-    right: 47%;
-}
+
 .navFooter #logosContainer {
     width: 150px;
     height: 150px;
     position: relative;
 }
+
 .navFooter .navLink:hover a {
     color: var(--naranjaSecundario);
 }
-.socialIcons{
+
+.socialIcons {
     display: flex;
     justify-content: center;
     gap: 50px;
 }
-.socialIcons a svg{
+
+.socialIcons a svg {
     width: 60px;
     height: 60px;
 }
-.socialIcons a svg path{
+
+.socialIcons a svg path {
     transition: all ease-in-out .3s;
 }
-.socialIcons a svg:hover path{
+
+.socialIcons a svg:hover path {
     fill: var(--negroFuentes);
     transform: translateY(10px);
 }
-.youtubeLogo{
+
+.youtubeLogo {
     transform: scale(1.3);
 }
+
+.footerDiv2 span {
+    font-weight: 400;
+    color: var(--negroFuentes);
+    font-size: 25px;
+}
+
 /* *********************************** MEDIA QUERRYS *********************************** */
+@media screen and (max-width: 768px) {
+    .fc-daygrid-day-frame {
+        min-height: 90px;
+    }
+    .fc {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 75px;
+        margin-top: 5rem;
+    }
+    .btn {
+        transform: scale(.8);
+    }
+    .col1Header {
+        padding: 0px 0px 0px 30px;
+    }
+    .col2Header img {
+        height: 80%;
+        left: -150px;
+    }
+    header nav, nav ul {
+        flex-direction: column;
+    }
+    header {
+        position: relative;
+    }
+    header nav {
+        width: 100vw;
+        padding: 0px;
+    }
+    header nav ul {
+        background-color: rgba(245, 154, 63, 1);
+        width: 92%;
+        margin-top: 30px;
+        align-items: center;
+        gap: 60px;
+        height: fit-content;
+        position: absolute;
+        bottom: -489px;
+        /* POSITION EN LA QUE SE VE BIEN */
+        /* left: 492px; */
+        left: 5000px;
+        padding: 2rem;
+    }
+    .containerActions {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 100vw;
+        padding-right: 5rem;
+    }
+    #logosContainer {
+        display: none;
+    }
+    #openMenu {
+        display: block;
+    }
+    /* SECTION ONE */
+    .sectionOneAboutUs {
+        background-position: 4%;
+    }
+    .col1About img {
+        height: 700px !important;
+    }
+    h2 {
+        font-size: 76px;
+    }
+    p {
+        font-size: 26px;
+    }
+    /* SECTION TWO */
+    .sectionTwoRoutines {
+        margin: 0px 70px;
+    }
+    .tabMenu {
+        transform: scale(.9);
+    }
+    .cardsContainer {
+        flex-wrap: wrap;
+    }
+    .cardRoutine {
+        width: 400px;
+    }
+    /* SECTION TREE CALENDAR */
+        #calendar {
+        transform: scale(.9);
+    }
+    /* SECTION FOUR BLOG */
+    .sectionFourBlog{
+        padding: 0px 30px !important;
+    }
+    .containerPosts{
+        justify-content: center;
+    }
+    .postGuide{
+        transform: scale(.9);
+    }
+    .postGuide:hover{
+        transform: translateX(-1px);
+    }
+    /* SECTION FIVE */
+    .sectionFiveReviews{
+        padding: 0rem 1.5rem !important;
+    }
+    .cardsTestimoniosContainer{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+    .cardTestimonioUser{
+        transform: scale(.9);
+    }
+    .cardTestimonioUser:hover{
+        transform: rotate(-1deg);
+    }
+    /* FOOTER */
+    footer{
+        gap: 50px;
+    }
+    .footerDiv1, .footerDiv2{
+        padding: 0px;
+    }
+    .footerDiv1 p{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .fc-daygrid-day-frame {
+        min-height: 80px;
+    }
+    .fc {
+        font-size: 12px;
+    }
+    .fc-toolbar-title {
+        font-size: 18px;
+    }
+    h1{
+        font-size: 50px  !important;
+        margin-top: 0px;
+    }
+    .btn{
+        transform: scale(.7);
+    }
+    .btn:hover{
+        transform: scale(.8);
+    }
+    #closeMenu svg, #openMenu svg{
+        width: 64px;
+    }
+    .col1Header{
+        padding: 0px 20px 0px 10px;
+    }
+    .col2Header img{
+        height: 75%;
+    }
+    h2{
+        font-size: 56px;
+    }
+    p{
+        font-size: 23px;
+    }
+    /* SECTION ONE */
+    .sectionOneAboutUs{
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-blend-mode: lighten;
+    }
+    .col1About{
+        display: none;
+    }
+    .col2About{
+        text-align: center;
+        justify-content: center;
+        padding-right: 0rem;
+        width: 100%;
+        padding: 0px 80px !important;
+    }
+    .col2About p{
+        margin-top: 20px !important;
+    }
+    /* Section two routine */
+    .tabMenu{
+        flex-direction: column;
+    }
+    .sectionTwoRoutines{
+        margin: 0px 30px;
+    }
+    .cardRoutine{
+        width: 300px;
+    }
+    /* Section four blog */
+    .sectionFourBlog{
+        padding: 0rem 15px !important;
+    }
+    .postGuide{
+        transform: scale(.8);
+    }
+    .postGuide:hover{
+        transform: scale(.9) !important;
+    }
+    /* Section five reviews */
+    .cardTestimonioUser{
+        transform: scale(.8);
+    }
+    .cardTestimonioUser:hover{
+        transform: scale(.8);
+    }
+    /* Footer */
+    .footerDiv1 p{
+        width: 65%;
+    }
+    footer nav ul li a{
+        font-size: 25px;
+    }
+}
