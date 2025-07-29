@@ -1,74 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit Force</title>
+    <title>Fit Force La Plataforma Top De Fitness</title>
     <link rel="shortcut icon" href="./assets/favIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/styleLanding.css">
-    <meta name="description" content="FitForce es una plataforma fitness con rutinas de gimnasio, crossfit, calendario de entrenamientos, blog motivacional y más. Entrena con propósito y transforma tu vida.">
+    <meta name="description"
+        content="FitForce es una plataforma fitness con rutinas de gimnasio, crossfit, calendario y más.">
+    <!-- PARA EL CALENDARIO -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js" defer></script>
 </head>
+
 <body>
     <header>
         <nav>
             <!-- Para el menu de hamburguesa -->
-            <a href="#" class="containerActionMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="143" height="142" viewBox="0 0 143 142" fill="none"
-                    id="openMenu">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M142.382 71.178C142.382 110.293 110.675 142 71.56 142C32.4449 142 0.737864 110.293 0.737864 71.178C0.737864 32.063 32.4449 0.355957 71.56 0.355957C110.675 0.355957 142.382 32.063 142.382 71.178ZM128.218 71.178C128.218 86.2046 122.248 100.616 111.623 111.241C100.998 121.866 86.5865 127.836 71.56 127.836C56.5334 127.836 42.1223 121.866 31.4969 111.241C20.8716 100.616 14.9023 86.2046 14.9023 71.178C14.9023 56.1515 20.8716 41.7404 31.4969 31.115C42.1223 20.4896 56.5334 14.5204 71.56 14.5204C86.5865 14.5204 100.998 20.4896 111.623 31.115C122.248 41.7404 128.218 56.1515 128.218 71.178Z"
-                        fill="black" />
-                    <path
-                        d="M45.958 39.4082C44.3222 39.4082 42.7534 40.058 41.5967 41.2147C40.44 42.3714 39.7902 43.9402 39.7902 45.576C39.7902 47.2118 40.44 48.7806 41.5967 49.9373C42.7534 51.094 44.3222 51.7438 45.958 51.7438H95.3003C96.9361 51.7438 98.5049 51.094 99.6616 49.9373C100.818 48.7806 101.468 47.2118 101.468 45.576C101.468 43.9402 100.818 42.3714 99.6616 41.2147C98.5049 40.058 96.9361 39.4082 95.3003 39.4082H45.958ZM39.7902 70.352C39.7902 68.7162 40.44 67.1474 41.5967 65.9907C42.7534 64.834 44.3222 64.1842 45.958 64.1842H95.3003C96.9361 64.1842 98.5049 64.834 99.6616 65.9907C100.818 67.1474 101.468 68.7162 101.468 70.352C101.468 71.9878 100.818 73.5566 99.6616 74.7133C98.5049 75.8699 96.9361 76.5198 95.3003 76.5198H45.958C44.3222 76.5198 42.7534 75.8699 41.5967 74.7133C40.44 73.5566 39.7902 71.9878 39.7902 70.352ZM45.958 88.9602C44.3222 88.9602 42.7534 89.61 41.5967 90.7667C40.44 91.9234 39.7902 93.4922 39.7902 95.128C39.7902 96.7638 40.44 98.3326 41.5967 99.4893C42.7534 100.646 44.3222 101.296 45.958 101.296H95.3003C96.9361 101.296 98.5049 100.646 99.6616 99.4893C100.818 98.3326 101.468 96.7638 101.468 95.128C101.468 93.4922 100.818 91.9234 99.6616 90.7667C98.5049 89.61 96.9361 88.9602 95.3003 88.9602H45.958Z"
-                        fill="black" />
-                </svg>
-            </a>
-            <a href="#" class="containerActionMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="142" height="142" viewBox="0 0 142 142" fill="none"
-                    id="closeMenu">
-                    <path
-                        d="M21.6212 121.764C14.8569 115.23 9.46153 107.416 5.74982 98.7751C2.0381 90.1345 0.0843897 80.8412 0.00267401 71.4375C-0.0790417 62.0338 1.71288 52.708 5.27388 44.0042C8.83487 35.3004 14.0936 27.393 20.7433 20.7433C27.393 14.0936 35.3004 8.83487 44.0042 5.27388C52.708 1.71288 62.0338 -0.0790417 71.4375 0.00267401C80.8412 0.0843897 90.1345 2.0381 98.7751 5.74982C107.416 9.46153 115.23 14.8569 121.764 21.6212C134.664 34.9784 141.803 52.8682 141.642 71.4375C141.48 90.0068 134.032 107.77 120.901 120.901C107.77 134.032 90.0068 141.48 71.4375 141.642C52.8682 141.803 34.9784 134.664 21.6212 121.764ZM31.6071 111.778C42.2383 122.409 56.6575 128.382 71.6924 128.382C86.7273 128.382 101.146 122.409 111.778 111.778C122.409 101.146 128.382 86.7273 128.382 71.6924C128.382 56.6575 122.409 42.2383 111.778 31.6071C101.146 20.9758 86.7273 15.0032 71.6924 15.0032C56.6575 15.0032 42.2383 20.9758 31.6071 31.6071C20.9758 42.2383 15.0032 56.6575 15.0032 71.6924C15.0032 86.7273 20.9758 101.146 31.6071 111.778ZM101.721 51.6497L81.6783 71.6924L101.721 91.735L91.735 101.721L71.6924 81.6783L51.6497 101.721L41.6638 91.735L61.7065 71.6924L41.6638 51.6497L51.6497 41.6638L71.6924 61.7065L91.735 41.6638L101.721 51.6497Z"
-                        fill="black" />
-                </svg>
-            </a>
             <!-- Para el logo -->
+            <div class="containerActions">
+                <a href="#" class="containerActionMenu" id="openMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="143" height="142" viewBox="0 0 143 142" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M142.382 71.178C142.382 110.293 110.675 142 71.56 142C32.4449 142 0.737864 110.293 0.737864 71.178C0.737864 32.063 32.4449 0.355957 71.56 0.355957C110.675 0.355957 142.382 32.063 142.382 71.178ZM128.218 71.178C128.218 86.2046 122.248 100.616 111.623 111.241C100.998 121.866 86.5865 127.836 71.56 127.836C56.5334 127.836 42.1223 121.866 31.4969 111.241C20.8716 100.616 14.9023 86.2046 14.9023 71.178C14.9023 56.1515 20.8716 41.7404 31.4969 31.115C42.1223 20.4896 56.5334 14.5204 71.56 14.5204C86.5865 14.5204 100.998 20.4896 111.623 31.115C122.248 41.7404 128.218 56.1515 128.218 71.178Z"
+                            fill="black" />
+                        <path
+                            d="M45.958 39.4082C44.3222 39.4082 42.7534 40.058 41.5967 41.2147C40.44 42.3714 39.7902 43.9402 39.7902 45.576C39.7902 47.2118 40.44 48.7806 41.5967 49.9373C42.7534 51.094 44.3222 51.7438 45.958 51.7438H95.3003C96.9361 51.7438 98.5049 51.094 99.6616 49.9373C100.818 48.7806 101.468 47.2118 101.468 45.576C101.468 43.9402 100.818 42.3714 99.6616 41.2147C98.5049 40.058 96.9361 39.4082 95.3003 39.4082H45.958ZM39.7902 70.352C39.7902 68.7162 40.44 67.1474 41.5967 65.9907C42.7534 64.834 44.3222 64.1842 45.958 64.1842H95.3003C96.9361 64.1842 98.5049 64.834 99.6616 65.9907C100.818 67.1474 101.468 68.7162 101.468 70.352C101.468 71.9878 100.818 73.5566 99.6616 74.7133C98.5049 75.8699 96.9361 76.5198 95.3003 76.5198H45.958C44.3222 76.5198 42.7534 75.8699 41.5967 74.7133C40.44 73.5566 39.7902 71.9878 39.7902 70.352ZM45.958 88.9602C44.3222 88.9602 42.7534 89.61 41.5967 90.7667C40.44 91.9234 39.7902 93.4922 39.7902 95.128C39.7902 96.7638 40.44 98.3326 41.5967 99.4893C42.7534 100.646 44.3222 101.296 45.958 101.296H95.3003C96.9361 101.296 98.5049 100.646 99.6616 99.4893C100.818 98.3326 101.468 96.7638 101.468 95.128C101.468 93.4922 100.818 91.9234 99.6616 90.7667C98.5049 89.61 96.9361 88.9602 95.3003 88.9602H45.958Z"
+                            fill="black" />
+                    </svg>
+                </a>
+                <a href="#" class="containerActionMenu" id="closeMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="142" height="142" viewBox="0 0 142 142" fill="none">
+                        <path
+                            d="M21.6212 121.764C14.8569 115.23 9.46153 107.416 5.74982 98.7751C2.0381 90.1345 0.0843897 80.8412 0.00267401 71.4375C-0.0790417 62.0338 1.71288 52.708 5.27388 44.0042C8.83487 35.3004 14.0936 27.393 20.7433 20.7433C27.393 14.0936 35.3004 8.83487 44.0042 5.27388C52.708 1.71288 62.0338 -0.0790417 71.4375 0.00267401C80.8412 0.0843897 90.1345 2.0381 98.7751 5.74982C107.416 9.46153 115.23 14.8569 121.764 21.6212C134.664 34.9784 141.803 52.8682 141.642 71.4375C141.48 90.0068 134.032 107.77 120.901 120.901C107.77 134.032 90.0068 141.48 71.4375 141.642C52.8682 141.803 34.9784 134.664 21.6212 121.764ZM31.6071 111.778C42.2383 122.409 56.6575 128.382 71.6924 128.382C86.7273 128.382 101.146 122.409 111.778 111.778C122.409 101.146 128.382 86.7273 128.382 71.6924C128.382 56.6575 122.409 42.2383 111.778 31.6071C101.146 20.9758 86.7273 15.0032 71.6924 15.0032C56.6575 15.0032 42.2383 20.9758 31.6071 31.6071C20.9758 42.2383 15.0032 56.6575 15.0032 71.6924C15.0032 86.7273 20.9758 101.146 31.6071 111.778ZM101.721 51.6497L81.6783 71.6924L101.721 91.735L91.735 101.721L71.6924 81.6783L51.6497 101.721L41.6638 91.735L61.7065 71.6924L41.6638 51.6497L51.6497 41.6638L71.6924 61.7065L91.735 41.6638L101.721 51.6497Z"
+                            fill="black" />
+                    </svg>
+                </a>
+            </div>
             <a href="#" id="logosContainer">
                 <img id="logo" src="./assets/favIcon.png" alt="imagenLogoPrincipal">
                 <img id="logoHover" src="./assets/favIconHover.png" alt="imagenLogoPrincipalConHover">
             </a>
             <!-- navlinks -->
-            <ul>
+            <ul id="ulHeader">
+                <li class="navLink">
+                    <a href="#">INICIO</a>
+                </li>
                 <li class="navLink">
                     <a href="#historia">HISTORIA</a>
-                    <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                 </li>
                 <li class="navLink">
                     <a href="#rutinas">RUTINAS</a>
-                    <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                 </li>
                 <li class="navLink">
                     <a href="#calendario">CALENDARIO</a>
-                    <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                 </li>
                 <li class="navLink">
                     <a href="#blog">BLOG</a>
-                    <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                 </li>
             </ul>
         </nav>
-        <div class="colsHeaderContainer">
-            <div class="col1Header">
-                <h1>DESAFÍA TUS LÍMITES, TRANSFORMA TU VIDA</h1>
-                <a href="#rutinas" class="btn">RUTINAS</a>
-                <img src="./assets/triangleHeader.png" alt="imagenDeUnTrianguloNaranjaDeDecoracion"
-                    class="triangleHeader triangle1">
-                <img src="./assets/triangleHeader.png" alt="imagenDeUnTrianguloNaranjaDeDecoracion"
-                    class="triangleHeader triangle2">
-                <img src="./assets/triangleHeader.png" alt="imagenDeUnTrianguloNaranjaDeDecoracion"
-                    class="triangleHeader triangle3">
+        <!-- HEADER #1 -->
+        <div class="headerSlide active">
+            <div class="colsHeaderContainer">
+                <div class="col1Header">
+                    <h1>DESAFÍA TUS LÍMITES, TRANSFORMA TU VIDA</h1>
+                    <a href="#rutinas" class="btn">RUTINAS</a>
+                </div>
+                <div class="col2Header">
+                    <img src="./assets/imgHeaderFinal1.png" alt="imagenDePersonaEntrenando">
+                </div>
             </div>
-            <div class="col2Header">
-                <img src="./assets/imgHeaderFinal1.png" alt="imagenDePersonaEntrenando">
+        </div>
+        <!-- HEADER #2 -->
+        <div class="headerSlide">
+            <div class="colsHeaderContainer">
+                <div class="col1Header">
+                    <h1>SUPERA TUS FRONTERAS, CONQUISTA EL ÉXITO</h1>
+                    <a href="#rutinas" class="btn">RUTINAS</a>
+                </div>
+                <div class="col2Header">
+                    <img src="./assets/imgHeaderFinal1.png" alt="imagenDePersonaEntrenando">
+                </div>
+            </div>
+        </div>
+        <!-- HEADER #3 -->
+        <div class="headerSlide">
+            <div class="colsHeaderContainer">
+                <div class="col1Header">
+                    <h1>IMPULSA TU ENERGÍA, CONQUISTA TU META</h1>
+                    <a href="#rutinas" class="btn">RUTINAS</a>
+                </div>
+                <div class="col2Header">
+                    <img src="./assets/imgHeaderFinal1.png" alt="imagenDePersonaEntrenando">
+                </div>
             </div>
         </div>
     </header>
@@ -211,9 +237,9 @@
                 </article>
             </div>
         </section>
-        <!-- Aquí se mostrará el calendario (FullCalendar + PHP después) -->
         <section class="sectionThreeCalendar" id="calendario">
-            <h1>HERE GOES THE CALENDAR SECTION</h1>
+            <h2>Novedades en el calendario</h2>
+            <div id="calendar"></div>
         </section>
         <section class="sectionFourBlog" id="blog">
             <h2>El conocimiento también entrena</h2>
@@ -229,39 +255,36 @@
                     <img src="./assets/imgBlogSection/blogFitnessImg.jpg"
                         alt="imagen que representa el post de fitness correspondiente">
                     <div class="containerTextsBlog">
-                        <h3>Cuerpo Firme</h3>
-                        <span>Junio 2</span>
-                        <p>Las claves para mejorar tu físico sin ir al gimnasio.</p>
+                        <h3>¿Cuerpo Firme?</h3>
+                        <p>Tonificá desde casa con movimientos simples que activan todo tu cuerpo. Sin máquinas, sin excusas, solo resultados reales.</p>
                     </div>
                 </article>
                 <article class="postGuide">
                     <img src="./assets/imgBlogSection/blogFitnessImg (2).jpg"
                         alt="imagen que representa el post de fitness correspondiente">
                     <div class="containerTextsBlog">
-                        <h3>Rutina Diaria</h3>
-                        <span>Junio 9</span>
-                        <p>Errores comunes al entrenar y cómo evitarlos fácil.</p>
+                        <h3>¿Rutina Diaria?</h3>
+                        <p>Corregí los errores que frenan tu progreso. Contactanos para saber qué evitar y cómo lograr entrenamientos más efectivos y seguros.</p>
                     </div>
                 </article>
                 <article class="postGuide">
                     <img src="./assets/imgBlogSection/blogFitnessImg (3).jpg"
                         alt="imagen que representa el post de fitness correspondiente">
                     <div class="containerTextsBlog">
-                        <h3>Músculo Real</h3>
-                        <span>Junio 16</span>
-                        <p>Rutina en casa: quema grasa y ganá músculo real.</p>
+                        <h3>¿Músculo Real?</h3>
+                        <p>Seguí las rutinas caseras para eliminar grasa y fortalecerte sin equipo. Ideal si querés resultados visibles en poco tiempo.</p>
                     </div>
                 </article>
                 <article class="postGuide">
                     <img src="./assets/imgBlogSection/blogFitnessImg (4).jpg"
                         alt="imagen que representa el post de fitness correspondiente">
                     <div class="containerTextsBlog">
-                        <h3>Fuerza Total</h3>
-                        <span>Junio 23</span>
-                        <p>Cómo organizar tu semana para entrenar sin fallar.</p>
+                        <h3>¿Fuerza Total?</h3>
+                        <p>Organizá tu semana con intención. Alterná días clave, descansos y enfoques para mantenerte constante y avanzar firme.</p>
                     </div>
                 </article>
             </div>
+
         </section>
         <section class="sectionFiveReviews">
             <h2>Ellos lo intentaron, ellos lo lograron.</h2>
@@ -296,8 +319,11 @@
     <footer>
         <div class="footerDiv1">
             <h2>Contactanos</h2>
-            <p>¿Tenés dudas, ideas o querés unirte al cambio? <span>Escribinos y empecemos </span> a construir tu mejorversión.</p>
-            <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=stevenrojasrivera182@gmail.com&su=Consulta%20FitForce&body=Buenas,%20estoy%20interesad%40%20en..." target="_blank" rel="noopener noreferrer">Contactar</a>
+            <p>¿Tenés dudas, ideas o querés unirte al cambio? <span>Escribinos y empecemos </span> a construir tu
+                mejorversión.</p>
+            <a class="btn"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=stevenrojasrivera182@gmail.com&su=Consulta%20FitForce&body=Buenas,%20estoy%20interesad%40%20en..."
+                target="_blank" rel="noopener noreferrer">Contactar</a>
         </div>
         <div class="footerDiv2">
             <nav class="navFooter">
@@ -309,20 +335,19 @@
                 <!-- navlinks -->
                 <ul>
                     <li class="navLink">
+                        <a href="#">INICIO</a>
+                    </li>
+                    <li class="navLink">
                         <a href="#historia">HISTORIA</a>
-                        <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                     </li>
                     <li class="navLink">
                         <a href="#rutinas">RUTINAS</a>
-                        <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                     </li>
                     <li class="navLink">
                         <a href="#calendario">CALENDARIO</a>
-                        <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                     </li>
                     <li class="navLink">
                         <a href="#blog">BLOG</a>
-                        <img src="./assets/thunderNav.png" alt="imagenDeRayo" class="thunderNav">
                     </li>
                 </ul>
             </nav>
@@ -349,8 +374,10 @@
                     </svg>
                 </a>
             </div>
+            <span>© 2025 FitForce. Todos los derechos reservados.</span>
         </div>
     </footer>
     <script src="./JS/main.js"></script>
 </body>
+
 </html>
