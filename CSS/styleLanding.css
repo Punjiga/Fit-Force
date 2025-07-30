@@ -2,26 +2,27 @@
 @font-face {
     font-family: 'BebasNeue';
     src: url(../assets/fonts/BebasNeue-Regular.ttf);
+    font-display: swap;
 }
-
 @font-face {
     font-family: 'Inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-display: swap;
 }
-
 @font-face {
     font-family: 'Montserrat';
     src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+    font-display: swap;
 }
-
 @font-face {
     font-family: 'Oswald';
     src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
+    font-display: swap;
 }
-
 @font-face {
     font-family: 'Poppins';
     src: url(../assets/fonts/Poppins-Medium.ttf);
+    font-display: swap;
 }
 
 /* VARIABLES */
@@ -182,20 +183,20 @@ nav ul li a {
     transition: all 0.3s ease-in-out;
 }
 
-#logo {
+.logo {
     opacity: 1;
 }
 
-#logoHover {
+.logoHover {
     opacity: 0;
     transform: scale(1.5);
 }
 
-#logosContainer:hover #logo {
+#logosContainer:hover .logo {
     opacity: 0;
 }
 
-#logosContainer:hover #logoHover {
+#logosContainer:hover .logoHover {
     opacity: 1;
 }
 
@@ -925,5 +926,63 @@ footer {
     }
     footer nav ul li a{
         font-size: 25px;
+    }
+}
+@media screen and (max-width: 390px) {
+    h1{
+        font-size: 36px !important;
+    }
+    .col2Header img{
+        height: 60%;
+    }
+    h2{
+        font-size: 36px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .cardRoutine{
+        width: 310px;
+        transform: scale(.8);
+    }
+    .cardRoutine:hover{
+        transform: scale(.8);
+    }
+    .sectionTwoRoutines{
+        margin: 0px 0px;
+    }
+    .sectionTwoRoutines h2, .sectionTwoRoutines p{
+        width: 80%;
+    }
+    .postGuide{
+        transform: scale(.8);
+    }
+    .postGuide p{
+        text-align: center;
+    }
+    .postGuide:hover{
+        transform: scale(.8) !important;
+    }
+    .sectionFiveReviews{
+        padding: 0rem !important;
+    }
+    .cardTestimonioUser{
+        height: fit-content;
+    }
+    .imgReviewContainer img{
+        width: 80%;
+        height: 80%;
+    }
+    .socialIcons{
+        flex-direction: column;
+    }
+    .footerDiv2 span{
+        font-size: 20px;
+    }
+    .cardsContainer{
+        gap: 0px !important;
+    }
+    header nav ul{
+        width: 82%;
     }
 }
