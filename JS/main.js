@@ -76,19 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* ==================== EVENTOS ==================== */
     /* Filtros de rutinas */
     gimnasioBtn.addEventListener('click', mostrarRutinasGimnasio);
